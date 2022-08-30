@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: build-suite-test-component-git-source-eegd
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: build-suite-test-component-git-source-eegd
+    app.kubernetes.io/part-of: build-suite-test-application-zkgi
+  name: build-suite-test-component-git-source-eegd
+  namespace: build-e2e-aed2fdb9-188d-4b9b-947e-cc412fa56fd2
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: build-suite-test-component-git-source-eegd
+    weight: 100
+status: {}

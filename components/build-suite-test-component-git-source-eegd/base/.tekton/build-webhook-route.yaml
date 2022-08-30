@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    build.appstudio.openshift.io/application: build-suite-test-application-zkgi
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/component: build-suite-test-component-git-source-eegd
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: elbuild-suite-test-component-git-source-eegd
+  namespace: build-e2e-aed2fdb9-188d-4b9b-947e-cc412fa56fd2
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: el-build-suite-test-component-git-source-eegd
+    weight: null
+status: {}
